@@ -1,0 +1,17 @@
+{
+    "name": "seguimiento-tramites-backend",
+    "version": "0.0.1",
+    "description": "backend de seguimiento de tramites con conexion a oracle procedure",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js"
+    },
+    "author": "Oliver Charry",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0",
+        "oracledb": "^5.0.0"
+    }
+}
