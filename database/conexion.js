@@ -1,28 +1,20 @@
-const objoracle = require('oracledb');
+// const oracledb = require('oracledb');
+// oracledb.initOracleClient({ configDir: 'C:\ORACLE\instantclient_19_6' });
 
 
-
-const db_conn = {
+const cns = {
     user: "autogestion",
     password: "control1",
-    connectString: "(DESCRIPTION =(LOAD_BALANCE = on)(ADDRESS = (PROTOCOL = TCP)(HOST = scan - corant.corantioquia.local)(PORT = 1521))(CONNECT_DATA =(SERVICE_NAME = bdpru)))",
+    connectString: "(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=scan-corant.corantioquia.local) (PORT=1521))(CONNECT_DATA=(SERVICE_NAME=bdpru)))",
 }
 
 
 
-async function Open(sql, builds, autoCommit) {
+// async function open(sql, binds, autoCommit) {
+//     let cnn = await oracledb.getConnection(cns);
+//     let result = await cnn.execute(sql, binds, { autoCommit });
+//     cnn.release();
+//     return result;
+// }
 
-    try {
-        let conn = await objoracle.getConnection(db_conn);
-        let results = await conn.execute(sql, builds, { autoCommit });
-        conn.release();
-        console.log('Base de datos conectada', conn);
-        return results
-
-    } catch (error) {
-        console.log('Error al conectar la base de datos');
-    }
-}
-
-
-module.exports = Open;
+module.exports = cns;
